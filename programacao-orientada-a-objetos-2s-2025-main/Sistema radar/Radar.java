@@ -1,20 +1,31 @@
+package sistema_radar;
+
 public class Radar {
+
     public Integer limitevelocidade;
-    public String modelo;
-    public String localizacao;
+    private String localizacao;
+
+    public Radar(String localizacao, Integer limiteVelocidade){
+        this.localizacao = localizacao;
+        this.limitevelocidade = limiteVelocidade;
+    }
+
+    public Radar(Integer limiteVelocidade){
+        this.limitevelocidade = limiteVelocidade;
+    }
 
     public void emitirnotificacao(String placa, Integer 
-    velocidadeavaliada){
+    velocidadeObservada){
         System.out.println("limitedevelocidade: "+ this.
         limitevelocidade);
-        System.out.println("velocidadeavaliada: "+
-        velocidadeavaliada);
+        System.out.println("Localizacao: " this.localizacao);
         System.out.println("Placa: "+placa);
+        System.out.println("Velocidade observada: " + "Velocidadeobservada");
 
     }
     public void avaliarvelocidade(carro c){
-        if(c.velocidade > this.limitevelocidade){
-            emitirnotificacao(c.placa, c.velocidade);
+        if(carro.getVelocidade() > this.limitevelocidade){
+            emitirnotificacao(carro.placa, carro.getVelocidade());
         }
 
     }
